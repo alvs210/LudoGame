@@ -9,6 +9,7 @@ Graphical interface with an embedded Ludo board image.
 Rolling dice and moving tokens based on classic Ludo rules.
 Simple Pygame-based animations and interactions.
 Ability to handle game turns and the logic for special cases like rolling a six.
+
 Installation
 
 Clone or download this repository.
@@ -16,7 +17,7 @@ Ensure you have Python installed on your system.
 Install the Pygame library by running:
 ```
 pip install pygame
-Make sure the image Ludo.jpeg is in the same directory as the game code.
+```
 
 # How to Run Game
 
