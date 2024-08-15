@@ -1,42 +1,38 @@
 # Ludo Game
 
-Ludo is a classic South Asian game that I played growing up in Pakistan! 
+Ludo is a classic South Asian game that I played growing up in Pakistan! This Python-based game allows you to play Ludo with others on your laptop/computer :) 
 
 # Features
 
-Support for 2-4 players.
-Graphical interface with an embedded Ludo board image.
-Rolling dice and moving tokens based on classic Ludo rules.
-Simple Pygame-based animations and interactions.
-Ability to handle game turns and the logic for special cases like rolling a six.
+- 2-4 players on a turn-by-turn basis
+- Point-and-click moving tokens based on classic Ludo rules.
+- Graphical interface with an embedded Ludo board image.
+- Ability to handle game rules like first turn on a 6 dice, kicking another token off the board, etc.
+- A dice roll button & "You Win!" win condition
 
-Installation
+# Demo
 
-Clone or download this repository.
-Ensure you have Python installed on your system.
+
+
+# Installation
+
+Clone or download this repository. This game depends on Python, so make sure you have that downloaded!
 Install the Pygame library by running:
 ```
 pip install pygame
 ```
+For issues during installation, check here: 
 
-# How to Run Game
+# How to Play Game
 
-Open a terminal or command prompt.
-Navigate to the directory containing the game files.
-Run the game using the following command:
-bash
-Copy code
-python FinalLudo.py
+Run the game in the Terminal via:
 
-# How to Play
+```
+```
 
-Choose the number of players (2-4).
-Players take turns rolling the dice.
-Rolling a six allows the player to either move a token out of the starting area or move an existing token forward.
-The goal is to move all your tokens to the finish area before your opponents.
-Special rules include:
-Rolling a six gives an extra turn.
-You can send an opponent's token back to start by landing on their space.
+# Rules of the Game
+
+# Future Improvements
 
 # Dependencies
 
