@@ -1,6 +1,6 @@
 # Ludo Game
 
-This is a digital implementation of the classic board game Ludo using Python and Pygame. The game allows 2-4 players to compete in a race to get all their tokens to the finish line, following the traditional rules of Ludo. The game offers simple controls, an interactive interface, and logic that follows the classic Ludo rules.
+Ludo is a classic South Asian game that I played growing up in Pakistan! 
 
 # Features
 
