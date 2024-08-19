@@ -33,7 +33,7 @@ Running the game varies based on your device! See [here](https://artofproblemsol
 On a Mac, open your terminal.  (Command+Space, then type terminal in the search box and press enter). Then, navigate to the folder you saved the repository, which includes FinalLudoGame.py file and the LudoGame.jpeg file. Then, run the following in the terminal:
 
 ```
-python3  FinalLudoGame.py
+python3  FinalLudo.py
 ```
 Note: the LudoGame.jpeg image *must* be in the same folder, or this won't work! It'll give you the error :)
 
