@@ -14,6 +14,10 @@ Ludo is a classic South Asian game that I played growing up in Pakistan! This Py
 
 
 
+https://github.com/user-attachments/assets/f48a7f8e-1956-48f4-a357-2b82957e2241
+
+
+
 # Installation
 
 Clone or download this repository. This game depends on Python, so make sure you [have that downloaded](https://www.python.org/downloads/)!
@@ -58,6 +62,7 @@ More detailed instructions [here](https://www.ymimports.com/pages/how-to-play-lu
 # Dependencies
 
 Python 3.x or Python 2.x
+
 Pygame
 
 # Notes
