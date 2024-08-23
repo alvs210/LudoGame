@@ -66,3 +66,4 @@ Python 3.x or Python 2.x
 Pygame
 
 # Notes
+A lot of inspiration and guidance came from the sample games existing in the Pygames extension pack and ChatGPT. 
