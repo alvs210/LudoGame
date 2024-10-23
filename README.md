@@ -101,10 +101,11 @@ Each player must move all four of their tokens from the start to the home column
 ## **Project Structure**
 ```
 ├── images/               # Images and animations in the game
-├── LudoPachisi.py         # Main game
+├── LudoPachisi.py        # Main game
 ├── README.md             # This README file
 ├── requirements.txt      # Python dependencies
-└── workscited.txt      # Sources used!
+├── LudoWorksCited.pdf    # Sources used!
+└── OldLudo.py            # Old version of the game
 ```
 
 ---
