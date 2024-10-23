@@ -1,0 +1,20 @@
+﻿Coding Information Resources
+* Pygame Documentation. "Introduction to Pygame." Pygame, https://pygame.readthedocs.io/en/latest/1_intro/intro.html. Accessed 23 Oct. 2024.
+* Careaga, C. Pygame Examples. GitHub, https://github.com/CCareaga/Pygame-Examples. Accessed 23 Oct. 2024.
+Historical Information Resources
+* Bhattacharjee, Souvik. "The Meteoric Rise of Online Ludo in India: A Game Changer in Digital Entertainment." Medium, https://medium.com/@souvik.bhattacharjee/the-meteoric-rise-of-online-ludo-in-india-a-game-changer-in-digital-entertainment-ebcaed52d880. Accessed 23 Oct. 2024.
+* “History of Ludo.” Eduauraa, https://www.eduauraa.com/blog/history-of-ludo. Accessed 23 Oct. 2024.
+* Kheloo. "Ludo: The Origin Story of a Timeless Game." Kheloo Blog, https://blog.kheloo.com/ludo-the-origin-story-of-a-timeless-game/. Accessed 23 Oct. 2024.
+* "Pachisi." Britannica, https://www.britannica.com/topic/Pachisi. Accessed 23 Oct. 2024.
+* Red Apple Tech. “What Made Ludo Games Popular during COVID-19 Lockdown?” Red Apple Tech Blog, https://www.redappletech.com/blog/what-made-ludo-games-popular-during-covid-19-lockdown/. Accessed 23 Oct. 2024.
+* Shrav1012. “What Ludo Taught Me about Life.” Medium, https://shrav1012.medium.com/what-ludo-taught-me-about-life-46821555f1e8. Accessed 23 Oct. 2024.
+* Sciendo. "The Ancient Game of Chaupar Is an Ancestor of Modern Game Ludo." Sciendo, https://intapi.sciendo.com/pdf/10.2478/bgs-2021-0003. Accessed 23 Oct. 2024.
+* “Rules for Original Ludo.” Tea House Theatre, https://www.teahousetheatre.co.uk/rules-for-original-ludo#:~:text=Players%20choose%20their%204%20matching,start%20from%20that%20colour%20PRISON.&text=Pieces%20start%20their%20circuit%201,play%20is%20in%20turn%20clockwise. Accessed 23 Oct. 2024.
+Image Sources (if not free-to-use)
+* “Board #1.” eBay, https://www.ebay.com/itm/204303521917. Accessed 23 Oct. 2024.
+* “Board #1 Pachisi Pieces.” Pngtree, https://pngtree.com/freepng/a-rustic-wooden-cutting-board-set-against-transparent-background-emphasizing-its-warm-tones-and-unique-grain-patterns_17862345.html. Accessed 23 Oct. 2024.
+* “Board #2 Antique Ludo Board.” Instagram, https://www.instagram.com/p/By0cd_ylz4R/?epik=dj0yJnU9NVZ0SDMyS0F5VTFJY3BFM0pJYlBZRXp5RnR0cjVQNTcmcD0wJm49Tk9FQW9Pd0FDQ3dHRnctdnVWdk0wZyZ0PUFBQUFBR2NZVkgw. Accessed 23 Oct. 2024.
+* “Board #2 Ludo Pieces.” OpenClipArt, https://openclipart.org/detail/39655/ludo-piece-green. Accessed 23 Oct. 2024.
+* “Board #3.” Amazon, https://www.amazon.com/OFM-Games-Ludo-Champion/dp/B07B6SR1VK. Accessed 23 Oct. 2024.
+* “Colonial Ship.” Walmart, https://www.walmart.com/ip/Popular-Colorful-Pirate-Ship-Wall-Decals-Boys-Room-Pirates-Ships-Kids-Decor-Sticker-Decoration-Bedroom-Nursery-Kindergarten-Childrens-Vinyl-Art-Stick/257558134. Accessed 23 Oct. 2024.
+*
