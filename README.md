@@ -49,7 +49,7 @@ you might need to replace "python" with python3 or your specific python version
 cd .venv_name/bin
 source ./activate
 ```
-You should see your virtual environment's name in parentheses at the beginning of your command prompt. Now, you can download pygame via 
+You should see your virtual environment's name in parentheses at the beginning of your command prompt. Now, download pygame 
 ```
 pip install pygame
 ```
