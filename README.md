@@ -24,7 +24,7 @@ Specifically, pygame 2.6.1!
 
 ### **Installing/Running in Virtual Environment**
 
-If you want to run everything in a virtual environment (recommended), instructions are below. Otherwise, skip!
+If you want to run everything in a Python virtual environment (recommended), instructions are below. Otherwise, skip!
 
 Create your environment by running this in the terminal:
 ```
