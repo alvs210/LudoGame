@@ -5,11 +5,12 @@
 This project brings to life Ludo, a traditional South Asian game that I grew up playing in Pakistan, now recreated in a digital format using Python and Pygame. This project is part of my vision for a larger "Window into Pakistan," an interactive platform for exploring Pakistani culture, traditions, games, and stories through immersive digital storytelling. Through gameplay, I trace its historical transformation—from its origins as "Pachisi" in the Mughal Empire, to its rebranding as Ludo under British colonialism, and finally, to the modern digital version played worldwide today. By blending gameplay with interactive storytelling, this project highlights how a simple game can endure across centuries and cultures, while also reflecting on how technology can be a tool for reclaiming and sharing cultural legacies
 
 ### **Key Features:**
-- **Historical Journey:** Each game section is tied to a specific moment in history, from 1750 in the Mughal Empire to 2020 during the COVID-19 pandemic.
-- **Turn-based Gameplay:** Players take turns rolling dice and moving tokens, following the rules of Ludo, with intentional loopholes like skipping turns and re-rolling dices.
-- **Digital Transformation:** The game evolves through time, eventually transitioning to a digital version, reflecting how Ludo has transformed over the centuries.
-- **Interactive Storytelling:** Each phase of the game is accompanied by historical events that immerse the player in the era’s context.
-
+- 2-4 players on a turn-by-turn basis and point-and-click moving tokens based on classic Ludo rules.
+- Ability to handle game rules like first turn on a 6 dice, kicking another token off the board, etc.
+- Three different board interfaces and three different sets of tokens that change as a narrative progresses--from ancient Pachisi, to Ludo after patent, to digital Ludo. The tokens' positioning is not affected by the change.
+- Animations including texts, zooming in, ship sailing, etc.
+- Randomized dice movements.
+- Various buttons, pop-ups, and "You Win!" win condition
 ---
 
 ## **Getting Started**
@@ -17,9 +18,38 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
 ### **Prerequisites**
 
 - Python 3.x
-- Pygame library (To install, run `pip install pygame`)
+- Pygame library
 
-### **Installation**
+Specifically, pygame 2.6.1!
+
+### **Installing/Running in Virtual Environment**
+
+If you want to run everything in a virtual environment (recommended), instructions are below. Otherwise, skip!
+
+Create your environment by running this in the terminal:
+```
+python3 -m venv .venv_name
+```
+or, depending on your 
+```
+python -m venv .venv_name
+```
+
+Run your virtual environment:
+```
+cd .venv_name/bin
+source ./activate
+```
+You should see your virtual environment's name in parentheses at the beginning of your command prompt. Now, you can download pygame via 
+```
+pip install pygame
+```
+And then run the downloaded game by navigating into "LudoGame-main" (the name of this file) and then running
+```
+python LudoPachisi.py
+```
+
+### **Installing/Running without Virtual Environment**
 
 1. Clone or download the repository.
    ```bash
@@ -29,7 +59,7 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
    ```bash
    cd path-to-the-project-depending-on-where-you-saved-it
    ```
-3. Install required dependencies.
+3. Install required dependencies (if you have not via virtual environment).
    ```bash
    pip install python
    pip install pygame
@@ -47,19 +77,20 @@ Each player must move all four of their tokens from the start to the home column
 
 ### **Game Rules:**
 1. **Starting the Game:**
-   - Each player selects a color and places their tokens in the home base.
+   - Each player selects a color. The tokens already begin in the starting position.
    - To move a token from the home base, the player must roll a 6.
   
 2. **Rolling the Dice:**
-   - Players take turns rolling the dice and move their tokens based on the roll.
+   - Players take turns rolling the dice (via a button) and move their tokens by clicking on them.
    - Tokens move clockwise around the board.
-   - Rolling a 6 allows for an additional roll.
 
-3. **Landing on Opponents:**
+3. **Movements:**
    - Landing on an opponent's token sends their token back to the start position.
+   - You can only exit the starting position with a "6" rolled.
+   - You must roll the exact number of places remaining to reach the home base (center) and earn a point.
   
 4. **Winning:**
-   - The first player to move all four tokens into the home column wins the game.
+   - The first player to move all four tokens into the home base and thus earns 4 points wins the game.
 
 ### **Historical Context & Animations:**
 - The game begins in **1750**, during the Mughal Empire, where you and your friends gather to play Pachisi.
