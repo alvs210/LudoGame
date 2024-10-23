@@ -1,69 +1,92 @@
-# Ludo Game
+# **Ludo: From Empires to Epidemics**
 
-Ludo is a classic South Asian game that I played growing up in Pakistan! This Python-based game allows you to play Ludo with others on your laptop/computer :) 
+## **Description**
 
-# Features
+This project brings to life Ludo, a traditional South Asian game that I grew up playing in Pakistan, now recreated in a digital format using Python and Pygame. This project is part of my vision for a larger "Window into Pakistan," an interactive platform for exploring Pakistani culture, traditions, games, and stories through immersive digital storytelling. Through gameplay, I trace its historical transformation—from its origins as "Pachisi" in the Mughal Empire, to its rebranding as Ludo under British colonialism, and finally, to the modern digital version played worldwide today. By blending gameplay with interactive storytelling, this project highlights how a simple game can endure across centuries and cultures, while also reflecting on how technology can be a tool for reclaiming and sharing cultural legacies
 
-- 2-4 players on a turn-by-turn basis
-- Point-and-click moving tokens based on classic Ludo rules.
-- Graphical interface with an embedded Ludo board image.
-- Ability to handle game rules like first turn on a 6 dice, kicking another token off the board, etc.
-- A dice roll button & "You Win!" win condition
+### **Key Features:**
+- **Historical Journey:** Each game section is tied to a specific moment in history, from 1750 in the Mughal Empire to 2020 during the COVID-19 pandemic.
+- **Turn-based Gameplay:** Players take turns rolling dice and moving tokens, following the rules of Ludo, with intentional loopholes like skipping turns and re-rolling dices.
+- **Digital Transformation:** The game evolves through time, eventually transitioning to a digital version, reflecting how Ludo has transformed over the centuries.
+- **Interactive Storytelling:** Each phase of the game is accompanied by historical events that immerse the player in the era’s context.
 
-# Demo
+---
 
+## **Getting Started**
 
+### **Prerequisites**
 
-https://github.com/user-attachments/assets/f48a7f8e-1956-48f4-a357-2b82957e2241
+- Python 3.x
+- Pygame library (To install, run `pip install pygame`)
 
+### **Installation**
 
+1. Clone or download the repository.
+   ```bash
+   git clone https://github.com/your-repo-name
+   ```
+2. Navigate to the project directory.
+   ```bash
+   cd path-to-your-project
+   ```
+3. Install required dependencies.
+   ```bash
+   pip install python
+   pip install pygame
+   ```
+4. Run the game.
+   ```bash
+   python pygame.py
+   ```
+_you specifically need pygame==2.6.1, but that shouldn't need to be specified_
+---
 
-# Installation
+## **How to Play**
 
-Clone or download this repository. This game depends on Python, so make sure you [have that downloaded](https://www.python.org/downloads/)!
-Install the Pygame library by running:
+### **Objective:**
+Each player must move all four of their tokens from the start to the home column by completing a circuit around the board.
+
+### **Game Rules:**
+1. **Starting the Game:**
+   - Each player selects a color and places their tokens in the home base.
+   - To move a token from the home base, the player must roll a 6.
+  
+2. **Rolling the Dice:**
+   - Players take turns rolling the dice and move their tokens based on the roll.
+   - Tokens move clockwise around the board.
+   - Rolling a 6 allows for an additional roll.
+
+3. **Landing on Opponents:**
+   - Landing on an opponent's token sends their token back to the start position.
+  
+4. **Winning:**
+   - The first player to move all four tokens into the home column wins the game.
+
+### **Historical Context & Animations:**
+- The game begins in **1750**, during the Mughal Empire, where you and your friends gather to play Pachisi.
+- As the game progresses, different time periods are introduced, showing how the game evolves under British colonial rule and eventually into a digital version during the COVID-19 pandemic.
+
+---
+
+## **Project Structure**
 ```
-python3 -m venv path/to/venv
-source path/to/venv/bin/activate
-python3 -m pip install pygamw
+├── assets/               # Images, animations, and assets for the game
+├── LudoPachisi.py             # Main game logic
+├── README.md             # This README file
+└── requirements.txt      # Python dependencies
+└── workscited.txt      # Sources used!
 ```
-(Note: We aren't downloading pygame to the global environment. We're using a virtual environment. Installing system-wide packages is usually risky!)
-For issues during installation, check [here](https://www.pygame.org/wiki/GettingStarted).
 
-# How to Play Game
+---
 
-Running the game varies based on your device! See [here](https://artofproblemsolving.com/wiki/index.php/How_to_run_Pygame_Programs) for more instructions.
+## **Future Plans**
+- Improve digital design!! Graphic designing needed
+- Add more customization options for game rules and token designs.
+- Add historically relevant changes (examples: cowrie shells were used isntead of dices earlier, and tokens moved counterclockwise instead of clockwise)
+- Implement multiplayer functionality over a network.
+- Expand historical contexts with additional time periods and interactive storytelling.
 
-On a Mac, open your terminal.  (Command+Space, then type terminal in the search box and press enter). Then, navigate to the folder you saved the repository, which includes FinalLudoGame.py file and the LudoGame.jpeg file. Then, run the following in the terminal:
+---
 
-```
-python3  FinalLudo.py
-```
-Note: the LudoGame.jpeg image *must* be in the same folder, or this won't work! It'll give you the error :)
-
-# Rules of the Game
-
-1. The turns go in the order of yellow, green, red, blue.
-2. Each player gets to roll the dice once. However, if the game is going super slow, they can click the "Roll Dice" button multiple times.
-3. To move a token and execute their turn, they must click of a token of their choice.
-4. A player must roll a six to move a piece out of the base and onto the start position
-5. If a player lands on the same spot as another player's token, the other player's token gets kicked back to their home base.
-6. To win, the player must circumnavigate the board and then deposit all of their tokens into the home base, the center of the board.
-More detailed instructions [here](https://www.ymimports.com/pages/how-to-play-ludo)!
-
-# Future Improvements
-
-1) Add an instructions page that pops up when you begin the game--this should disappear after the user clicks on the screen.
-2) Slow down tokens' movements.
-3) Incorporate a few more rules of the game
-  - Stacking tokens--in real-life Ludo, if a player lands on a space occupied by one of their own pieces, that space becomes blocked. A blocked space cannot be passed or landed on by      an opponent’s piece.
-  - If a player rolls a six, they get an extra turn.
-    
-# Dependencies
-
-Python 3.x or Python 2.x
-
-Pygame
-
-# Notes
-A lot of inspiration and guidance came from the sample games existing in the Pygames extension pack and ChatGPT. 
+## **Acknowledgements**
+- BIG Shotuout to my brother Tauseef Nadeem for using his anthropological brain to guide me through this project and to Joel Mire for his reassuring compsci statements. Also Hala Mohammed for being so incredibly supportive and letting me demo on her multiple times.
