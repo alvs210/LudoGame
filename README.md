@@ -56,7 +56,7 @@ You should see your virtual environment's name in parentheses at the beginning o
 ```
 pip install pygame
 ```
-And then run the downloaded game by navigating into "LudoGame-main" (the name of this file) and then running
+And then run the downloaded game by navigating into "LudoGame-main" (the name of this folder) and then running
 ```
 python LudoPachisi.py
 ```
