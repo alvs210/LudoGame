@@ -40,12 +40,9 @@ If you want to run everything in a Python virtual environment (recommended), ins
 
 1. Create your environment by running this in the terminal:
 ```
-python3 -m venv .venv_name
-```
-or, depending on your system--
-```
 python -m venv .venv_name
 ```
+you might need to replace "python" with python3 or your specific python version
 
 2. Run your virtual environment:
 ```
@@ -80,7 +77,6 @@ pip install pygame
 ```bash
 python LudoPachisi.py
 ```
-you need pygame==2.6.1 but that shouldn't need to be specified...
 
 ## **How to Play**
 
