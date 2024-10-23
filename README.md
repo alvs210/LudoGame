@@ -6,8 +6,8 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
 
 ### **Key Features:**
 - 2-4 players on a turn-by-turn basis and point-and-click moving tokens based on classic Ludo rules.
+- Historical narrative! And three different board interfaces and three different sets of tokens that change as a narrative progresses--from ancient Pachisi, to Ludo after patent, to digital Ludo. The tokens' positioning is not affected by the change.
 - Ability to handle game rules like first turn on a 6 dice, kicking another token off the board, etc.
-- Three different board interfaces and three different sets of tokens that change as a narrative progresses--from ancient Pachisi, to Ludo after patent, to digital Ludo. The tokens' positioning is not affected by the change.
 - Animations including texts, zooming in, ship sailing, etc.
 - Randomized dice movements.
 - Various buttons, pop-ups, and "You Win!" win condition
