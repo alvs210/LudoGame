@@ -6,7 +6,7 @@ This project recreates Ludo, a traditional South Asian game I grew up playing in
 
 **NARRATIVE PLAYTHROUGH DEMO:**: [CLICK HERE](https://youtu.be/fmBuBdRFhOk)
 
-**OPPONENT INTERACTION AND EARNING POINTS DEMO** [CLICK HERE](https://youtube.com/shorts/_XFzpEceEg4?feature=share)
+**OPPONENT INTERACTION AND EARNING POINTS DEMO** [CLICK HERE](https://youtu.be/cfyxOwjXlVw)
 
 ### **Key Features:**
 - 2-4 players on a turn-by-turn basis and point-and-click moving tokens based on classic Ludo rules.
