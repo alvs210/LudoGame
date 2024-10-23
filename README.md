@@ -13,6 +13,18 @@ This project recreates Ludo, a traditional South Asian game I grew up playing in
 - Various buttons, pop-ups, and "You Win!" win condition
 ---
 
+## **Project Structure**
+```
+├── images/               # Images and animations in the game
+├── LudoPachisi.py        # Main game
+├── README.md             # This README file
+├── requirements.txt      # Python dependencies
+├── LudoWorksCited.pdf    # Sources used!
+└── OldLudo.py            # Old version of the game
+```
+
+---
+
 ## **Getting Started**
 
 ### **Prerequisites**
@@ -91,22 +103,6 @@ Each player must move all four of their tokens from the start to the home column
   
 4. **Winning:**
    - The first player to move all four tokens into the home base and thus earns 4 points wins the game.
-
-### **Historical Context & Animations:**
-- The game begins in **1750**, during the Mughal Empire, where you and your friends gather to play Pachisi.
-- As the game progresses, different time periods are introduced, showing how the game evolves under British colonial rule and eventually into a digital version during the COVID-19 pandemic.
-
----
-
-## **Project Structure**
-```
-├── images/               # Images and animations in the game
-├── LudoPachisi.py        # Main game
-├── README.md             # This README file
-├── requirements.txt      # Python dependencies
-├── LudoWorksCited.pdf    # Sources used!
-└── OldLudo.py            # Old version of the game
-```
 
 ---
 
