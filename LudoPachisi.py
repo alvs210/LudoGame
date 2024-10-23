@@ -738,7 +738,7 @@ def display_scores():
         y_offset += 50
 
     #  GitHub
-    github_text = "Check out alvs210's GitHub to learn more about Ludo"
+    github_text = "Check out alvs210's GitHub!"
     github_surface = small_font.render(github_text, True, BLACK)
     screen.blit(github_surface, (screen_width // 2 - github_surface.get_width() // 2, y_offset + 50))
 
