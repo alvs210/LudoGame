@@ -24,13 +24,13 @@ Specifically, pygame 2.6.1!
 
 ### **Installing/Running in Virtual Environment**
 
-If you want to run everything in a Python virtual environment (recommended), instructions are below. Otherwise, skip!
+If you want to run everything in a Python virtual environment (recommended), instructions are below. Otherwise, skip! First, download Python with your preferred method. Then...
 
 Create your environment by running this in the terminal:
 ```
 python3 -m venv .venv_name
 ```
-or, depending on your 
+or, depending on your system--
 ```
 python -m venv .venv_name
 ```
