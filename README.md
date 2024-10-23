@@ -40,7 +40,7 @@ If you want to run everything in a Python virtual environment (recommended), ins
 
 1. Clone or download the repository by running this in terminal.
 ```bash
-git clone https://github.com/alvs210/LudoGame
+https://github.com/alvs210/LudoGame.git
 ```
 2. Create your environment by running this in the terminal:
 ```
@@ -67,7 +67,7 @@ A few seconds later, a window should pop up!! Enjoy!!
 
 1. Clone or download the repository by running this in terminal.
 ```bash
-git clone https://github.com/alvs210/LudoGame
+https://github.com/alvs210/LudoGame.git
 ```
 2. Navigate to the project directory.
 ```bash
