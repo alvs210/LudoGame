@@ -19,7 +19,7 @@ This project recreates Ludo, a traditional South Asian game I grew up playing in
 ├── LudoPachisi.py        # Main game
 ├── README.md             # This README file
 ├── requirements.txt      # Python dependencies
-├── LudoWorksCited.pdf    # Sources used!
+├── LudoWorksCited.txt    # Sources used!
 └── OldLudo.py            # Old version of the game
 ```
 
