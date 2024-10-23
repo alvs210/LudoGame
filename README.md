@@ -57,6 +57,7 @@ pip install pygame
 ```
 python LudoPachisi.py
 ```
+A few seconds later, a window should pop up!! Enjoy!!
 
 ### **Installing/Running without Virtual Environment**
 
