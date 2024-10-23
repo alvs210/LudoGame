@@ -23,7 +23,7 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
 
 1. Clone or download the repository.
    ```bash
-   git clone https://github.com/your-repo-name
+   git clone https://github.com/alvs210/LudoGame
    ```
 2. Navigate to the project directory.
    ```bash
@@ -36,7 +36,7 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
    ```
 4. Run the game.
    ```bash
-   python pygame.py
+   python LudoPachisi.py
    ```
 you need pygame==2.6.1 but that shouldn't need to be specified...
 
@@ -72,7 +72,7 @@ Each player must move all four of their tokens from the start to the home column
 ├── assets/               # Images, animations, and assets for the game
 ├── LudoPachisi.py             # Main game logic
 ├── README.md             # This README file
-└── requirements.txt      # Python dependencies
+├── requirements.txt      # Python dependencies
 └── workscited.txt      # Sources used!
 ```
 
