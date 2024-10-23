@@ -69,8 +69,8 @@ Each player must move all four of their tokens from the start to the home column
 
 ## **Project Structure**
 ```
-├── assets/               # Images, animations, and assets for the game
-├── LudoPachisi.py             # Main game logic
+├── images/               # Images and animations in the game
+├── LudoPachisi.py         # Main game
 ├── README.md             # This README file
 ├── requirements.txt      # Python dependencies
 └── workscited.txt      # Sources used!
