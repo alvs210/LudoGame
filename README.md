@@ -27,7 +27,7 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
    ```
 2. Navigate to the project directory.
    ```bash
-   cd path-to-your-project
+   cd path-to-the-project-depending-on-where-you-saved-it
    ```
 3. Install required dependencies.
    ```bash
