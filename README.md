@@ -38,8 +38,7 @@ This project brings to life Ludo, a traditional South Asian game that I grew up 
    ```bash
    python pygame.py
    ```
-_you specifically need pygame==2.6.1, but that shouldn't need to be specified_
----
+you need pygame==2.6.1 but that shouldn't need to be specified...
 
 ## **How to Play**
 
