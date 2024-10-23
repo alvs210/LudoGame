@@ -61,33 +61,33 @@ button_y = screen_height // 2
 start_button_rect = pygame.Rect(button_x, button_y+100, button_width, button_height)
 
 # Load scroll image for instructions
-scroll_image = pygame.image.load('scroll_image.jpeg')
-old_paper = pygame.image.load('old_paper.jpeg')
+scroll_image = pygame.image.load('images/scroll_image.jpeg')
+old_paper = pygame.image.load('images/old_paper.jpeg')
 old_paper = pygame.transform.scale(old_paper, (screen_width, screen_height))
 scroll_image = pygame.transform.scale(scroll_image, (screen_width, screen_height))
 
 # Load welcome image for instructions
-welcome_image = pygame.image.load('welcome.png')
+welcome_image = pygame.image.load('images/welcome.png')
 welcome_image = pygame.transform.scale(welcome_image, (screen_width, screen_height))
 
 #instructions text
-instructions1 = pygame.image.load('instructions111.png')
-instructions2 = pygame.image.load('instructions22.png')
-instructions3 = pygame.image.load('instructions33.png')
+instructions1 = pygame.image.load('images/instructions111.png')
+instructions2 = pygame.image.load('images/instructions22.png')
+instructions3 = pygame.image.load('images/instructions33.png')
 
 #colonization text
-colony1 = pygame.image.load('colony1.png')
-colony2 = pygame.image.load('colony2-2.png')
+colony1 = pygame.image.load('images/colony1.png')
+colony2 = pygame.image.load('images/colony2-2.png')
 #patent text
-patent1 = pygame.image.load('patent11.png')
-patent2 = pygame.image.load('patent22.png')
+patent1 = pygame.image.load('images/patent11.png')
+patent2 = pygame.image.load('images/patent22.png')
 #COVID text
-covid1 = pygame.image.load('covid1.png')
-covid2 = pygame.image.load('covid2.png')
+covid1 = pygame.image.load('images/covid1.png')
+covid2 = pygame.image.load('images/covid2.png')
 #reflections text
-time1 = pygame.image.load('time1.png')
-time2 = pygame.image.load('time2.png')
-time3 = pygame.image.load('time3.png')
+time1 = pygame.image.load('images/time1.png')
+time2 = pygame.image.load('images/time2.png')
+time3 = pygame.image.load('images/time3.png')
 
 
 # Show COVID
@@ -368,7 +368,7 @@ running = True
 
 # BACKGROUND, AND ALL GAMEPLAY DETAILS
 try:
-    map_image = pygame.image.load('pachisi1.jpeg') if dice_roll_counter <  25 else pygame.image.load('antique_ludo.jpeg') if 25 <= dice_roll_counter < 35 else pygame.image.load('modern_ludo11.jpeg')
+    map_image = pygame.image.load('images/pachisi1.jpeg') if dice_roll_counter <  25 else pygame.image.load('images/antique_ludo.jpeg') if 25 <= dice_roll_counter < 35 else pygame.image.load('images/modern_ludo11.jpeg')
     map_image = pygame.transform.scale(map_image, (screen_width, screen_height - 100))
 except pygame.error:
     print("Unable to load image. Please ensure 'antique_ludo.jpeg' is in the same directory.")
@@ -381,11 +381,11 @@ grid_size = 40
 token_radius = grid_size // 3
 
 # Load images of tokens 1
-yellow_one_image = pygame.image.load('yellow_pawn.png')
-blue_one_image = pygame.image.load('blue_pawn.png')
-red_one_image = pygame.image.load('red_pawn.png')
-green_one_image = pygame.image.load('green_pawn.png')
-pawn_one_image = pygame.image.load('pawn.png')
+yellow_one_image = pygame.image.load('images/yellow_pawn.png')
+blue_one_image = pygame.image.load('images/blue_pawn.png')
+red_one_image = pygame.image.load('images/red_pawn.png')
+green_one_image = pygame.image.load('images/green_pawn.png')
+pawn_one_image = pygame.image.load('images/pawn.png')
 
 yellow_one = pygame.transform.scale(yellow_one_image, (grid_size, grid_size))
 blue_one= pygame.transform.scale(blue_one_image, (grid_size, grid_size))
@@ -394,10 +394,10 @@ green_one= pygame.transform.scale(green_one_image, (grid_size, grid_size))
 pawn_one= pygame.transform.scale(pawn_one_image, (grid_size, grid_size))
 
 # Load images of tokens 2
-yellow_token_image = pygame.image.load('yellow_sepoy.png')
-blue_token_image = pygame.image.load('blue_sepoy.png')
-red_token_image = pygame.image.load('red_sepoy.png')
-green_token_image = pygame.image.load('green_sepoy.png')
+yellow_token_image = pygame.image.load('images/yellow_sepoy.png')
+blue_token_image = pygame.image.load('images/blue_sepoy.png')
+red_token_image = pygame.image.load('images/red_sepoy.png')
+green_token_image = pygame.image.load('images/green_sepoy.png')
 
 yellow_two = pygame.transform.scale(yellow_token_image, (grid_size, grid_size))
 blue_two = pygame.transform.scale(blue_token_image, (grid_size, grid_size))
@@ -405,15 +405,15 @@ red_two = pygame.transform.scale(red_token_image, (grid_size, grid_size))
 green_two = pygame.transform.scale(green_token_image, (grid_size, grid_size))
 
 # Load image of the ship
-ship_image = pygame.image.load('ship.png')
+ship_image = pygame.image.load('images/ship.png')
 ship_image = pygame.transform.scale(ship_image, (300, 250))  # Scale the ship image
 
 # Load vintage map background for ship animation
-vintage_map_image = pygame.image.load('vintage_map.jpeg')
+vintage_map_image = pygame.image.load('images/vintage_map.jpeg')
 vintage_map_image = pygame.transform.scale(vintage_map_image, (screen_width, screen_height))
 
 # Load patent image for animation
-patent_image = pygame.image.load('patent.jpeg')
+patent_image = pygame.image.load('images/patent.jpeg')
 patent_image = pygame.transform.scale(patent_image, (screen_width, screen_height))
 
 # TOKEN PATHS AND STARTS AND END POSITIONS
@@ -635,7 +635,7 @@ def animate_patent():
 
     # Change the background to 'antique_ludo.jpeg' after the animation and text
     global map_image
-    map_image = pygame.image.load('antique_ludo.jpeg')
+    map_image = pygame.image.load('images/antique_ludo.jpeg')
     map_image = pygame.transform.scale(map_image, (screen_width, screen_height - 100))
 
     patent_animation_done = True
@@ -710,7 +710,7 @@ def animate_ship():
 
     # Change the background to 'Ludo.jpeg' after the ship animation and colonialism text
     global map_image
-    map_image = pygame.image.load('Ludo.jpeg')
+    map_image = pygame.image.load('images/Ludo.jpeg')
     map_image = pygame.transform.scale(map_image, (screen_width, screen_height - 100))
     ship_animation_done = True
 
@@ -755,7 +755,7 @@ def display_scores():
 # Draw board with tokens
 def draw_board_with_tokens(dice_roll=None, win=False):
     # Board background
-    map_image = pygame.image.load('pachisi1.jpeg') if dice_roll_counter < 25 else pygame.image.load('antique_ludo.jpeg') if 25 <= dice_roll_counter < 35 else pygame.image.load('modern_ludo11.jpeg')
+    map_image = pygame.image.load('images/pachisi1.jpeg') if dice_roll_counter < 25 else pygame.image.load('images/antique_ludo.jpeg') if 25 <= dice_roll_counter < 35 else pygame.image.load('images/modern_ludo11.jpeg')
     map_image = pygame.transform.scale(map_image, (screen_width, screen_height - 100))
     screen.blit(map_image, (0, 0))
     
