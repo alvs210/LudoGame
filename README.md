@@ -38,13 +38,17 @@ Specifically, pygame 2.6.1!
 
 If you want to run everything in a Python virtual environment (recommended), instructions are below. Otherwise, skip! First, download Python with your preferred method. Then...
 
-1. Create your environment by running this in the terminal:
+1. Clone or download the repository by running this in terminal.
+```bash
+git clone https://github.com/alvs210/LudoGame
+```
+2. Create your environment by running this in the terminal:
 ```
 python -m venv .venv_name
 ```
 you might need to replace "python" with python3 or your specific python version
 
-2. Run your virtual environment:
+3. Run your virtual environment:
 ```
 cd .venv_name/bin
 source ./activate
@@ -53,7 +57,7 @@ You should see your virtual environment's name in parentheses at the beginning o
 ```
 pip install pygame
 ```
-3. And then run the downloaded game by navigating into "LudoGame-main" (the name of this folder) and then running
+4. And then run the downloaded game by navigating into "LudoGame-main" (the name of this folder) and then running
 ```
 python LudoPachisi.py
 ```
@@ -61,7 +65,7 @@ A few seconds later, a window should pop up!! Enjoy!!
 
 ### **Installing/Running without Virtual Environment**
 
-1. Clone or download the repository.
+1. Clone or download the repository by running this in terminal.
 ```bash
 git clone https://github.com/alvs210/LudoGame
 ```
