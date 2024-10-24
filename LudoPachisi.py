@@ -3,6 +3,39 @@ import sys
 import random
 
 
+## A GUIDE TO ALL THE FUNCTIONS! ##
+
+# 1. Showing Text Pages
+# show_instructions(): Displays instructions for the game.
+# show_reflect1(): Displays the first reflection question.
+# show_reflect2(): Displays the second reflection question.
+# show_reflect3(): Displays the third reflection question.
+# show_COVID(): Displays the COVID animation.
+
+# 2. Animations
+# animate_ship(): Animates the ship movement across the screen with colonization text
+# animate_patent(): Animates the zoom-in effect on the patent image with patent text
+# animate_fade_in_out_scroll(): A general template for fading in and out the images (not directly used in the game).
+# animate_token_movement(start_pos, end_pos, token_color, dice_roll_counter): Animates the movement of a token from a start to an end position.
+
+# 3. Main Game Functions
+# welcome_screen(): Displays the welcome screen with a "Start" button.
+# roll_dice(): Returns a random integer from 1 to 6, simulating a dice roll.
+# draw_board_with_tokens(dice_roll=None, win=False): Draws the game board along with all tokens in their current positions.
+# draw_highlighted_token(token_position, token_color): Draws a highlighted circle around a selected token.
+# display_scores(): Displays the final scores after the game ends.
+
+# 4. Gameplay Logic
+# select_token_by_click(mouse_pos, tokens): Allows the player to select a token by clicking on it.
+# move_token_from_start(tokens, path, start_positions, dice_roll, selected_token): Moves a token from the start position onto the board if a 6 is rolled.
+# move_token(tokens, path, dice_roll, selected_token): Moves a token along the defined path based on the dice roll.
+# check_win_condition(tokens, end_position): Checks if all tokens of a given player have reached the end position. 
+
+## AND THE CODE BEGINS! ##
+
+#All Boolean values associated with the states and/or functions called
+#Begin as FALSE and turn to TRUE when animation/function/state
+#Avoid redoing of a specific state or function
 current_turn = None
 ship_animation_done = False
 patent_animation_done = False
@@ -15,7 +48,7 @@ show_reflect3_done = False
 show_instructions_done = False
 
 dice_roll_counter = 0  # dice roll counter
-dice_roll = None
+dice_roll = None    #No dice in the start of the game!
 
 # Initialize Pygame
 pygame.init()
@@ -35,69 +68,82 @@ GREEN = (0, 80, 0)
 BLUE = (0, 70, 255)
 YELLOW = (200, 120, 0)
 
+#Colors of the font indiciating whose turn it is
 TURN_GREEN = (0, 155, 0)
 TURN_BLUE = (0, 100, 255)
 TURN_YELLOW = (255, 155, 0)
 TURN_RED = (200, 0, 0)
 
-# Set up colors
+# Colors of boxes in which the turns are stated
 BOX_RED = (255, 204, 204)
 BOX_GREEN = (200, 255, 200)
 BOX_BLUE = (173, 216, 230)
 BOX_YELLOW = (255, 255, 224)
 
 
-# Fonts
+# Fonts used throughout the game
 font = pygame.font.Font(None, 74)
 small_font = pygame.font.Font(None, 36)
 turn_font = pygame.font.SysFont('gillsans', 30)
 
-# Button dimensions
+# START Button dimensions
 button_width, button_height = 200, 60
 button_x = screen_width // 2 - button_width // 2
 button_y = screen_height // 2
 
-# Start button rectangle
+# START button rectangle size and placement initialized
 start_button_rect = pygame.Rect(button_x, button_y+100, button_width, button_height)
 
-# Load scroll image for instructions
+# Load scroll image and old_paper image. These are blank/base images throughout the project,
 scroll_image = pygame.image.load('images/scroll_image.jpeg')
 old_paper = pygame.image.load('images/old_paper.jpeg')
 old_paper = pygame.transform.scale(old_paper, (screen_width, screen_height))
 scroll_image = pygame.transform.scale(scroll_image, (screen_width, screen_height))
 
-# Load welcome image for instructions
+# Load welcome images for instructions
 welcome_image = pygame.image.load('images/welcome.png')
 welcome_image = pygame.transform.scale(welcome_image, (screen_width, screen_height))
 
-#instructions text
+# Load instructions images for instructions
 instructions1 = pygame.image.load('images/instructions111.png')
 instructions2 = pygame.image.load('images/instructions22.png')
 instructions3 = pygame.image.load('images/instructions33.png')
 
-#colonization text
+# Load images for colonization playthrough with the ship (first animation)
 colony1 = pygame.image.load('images/colony1.png')
 colony2 = pygame.image.load('images/colony2-2.png')
-#patent text
+#Load patent images with the patent zoom-in (second animation)
 patent1 = pygame.image.load('images/patent11.png')
 patent2 = pygame.image.load('images/patent22.png')
-#COVID text
+#Load COVID images (third animation)
 covid1 = pygame.image.load('images/covid1.png')
 covid2 = pygame.image.load('images/covid2.png')
-#reflections text
+#Load reflection questions images (foruth, fifth, sixth animations)
 time1 = pygame.image.load('images/time1.png')
 time2 = pygame.image.load('images/time2.png')
 time3 = pygame.image.load('images/time3.png')
 
+# Load image of the ship
+ship_image = pygame.image.load('images/ship.png')
+ship_image = pygame.transform.scale(ship_image, (300, 250))  # Scale the ship image
 
-# Show COVID
+# Load vintage map background for ship animation
+vintage_map_image = pygame.image.load('images/vintage_map.jpeg')
+vintage_map_image = pygame.transform.scale(vintage_map_image, (screen_width, screen_height))
+
+# Load patent image for animation
+patent_image = pygame.image.load('images/patent.jpeg')
+patent_image = pygame.transform.scale(patent_image, (screen_width, screen_height))
+
+
+# Function to animate the COVID images on screen 
 def show_COVID():
-# Fade in and out scroll image
-# def animate_fade_in_out_scroll():
+    #Checking whether animation is complete
+    #It begins as FALSE, allowing animation to play
     global COVID_animation_done
     if COVID_animation_done:
         return
-    # Fade in
+    # Fade in the COVID1 image
     for alpha in range(0, 255, 5):
         covid1.set_alpha(alpha)
         screen.fill(WHITE)
@@ -115,12 +161,12 @@ def show_COVID():
             elif event.type == pygame.KEYDOWN:
                 waiting = False
 
-    # Show second page of covid
+    # Show second page of covid image
     screen.fill(WHITE)
     screen.blit(covid2, (0, 0))  # Display second page image
     pygame.display.flip()
 
-    # Wait for the player to press a key to exit instructions
+    # Wait for the player to press a key to exit COVID animation
     waiting = True
     while waiting:
         for event in pygame.event.get():
@@ -130,7 +176,7 @@ def show_COVID():
             elif event.type == pygame.KEYDOWN:
                 waiting = False
 
-    # Fade out
+    # Fade out the second image
     for alpha in range(255, 0, -5):
         covid2.set_alpha(alpha)
         screen.fill(WHITE)
@@ -139,14 +185,15 @@ def show_COVID():
         pygame.time.delay(20)
 
     # Clear the screen after instructions
+    #Set COVID_animation_done to TRUE so it does not replay in future
     screen.fill(WHITE)
     pygame.display.flip()
     COVID_animation_done = True
 
-# Show reflection
+# First reflection animation
 def show_reflect1():
-# Fade in and out scroll image
-# def animate_fade_in_out_scroll():
+    #Checking whether animation is complete
+    #It begins as FALSE, allowing animation to play
     global show_reflect1_done
     if show_reflect1_done:
         return
@@ -177,6 +224,7 @@ def show_reflect1():
         pygame.time.delay(20)
    
     # Clear the screen after instructions
+    # Animation finished, so set as TRUE
     screen.fill(WHITE)
     pygame.display.flip()
     show_reflect1_done = True
@@ -184,8 +232,8 @@ def show_reflect1():
 
 # Show reflection
 def show_reflect2():
-# Fade in and out scroll image
-# def animate_fade_in_out_scroll():
+    #Checking whether animation is complete
+    #It begins as FALSE, allowing animation to play
     global show_reflect2_done
     if show_reflect2_done:
         return
@@ -224,8 +272,8 @@ def show_reflect2():
 
 # Show reflection
 def show_reflect3():
-# Fade in and out scroll image
-# def animate_fade_in_out_scroll():
+    #Checking whether animation is complete
+    #It begins as FALSE, allowing animation to play
     global show_reflect3_done
     if show_reflect3_done:
         return
@@ -261,10 +309,8 @@ def show_reflect3():
 
 
 def show_instructions():
-    # Show first page of instructions
-    # screen.fill(WHITE)
-    # screen.blit(instructions1, (0, 0))
-    # pygame.display.flip()
+    #Checking whether animation is complete
+    #It begins as FALSE, allowing animation to play
     global show_instructions_done
     if show_instructions_done:
         return
@@ -350,6 +396,9 @@ def welcome_screen():
         pygame.display.flip()  # Update the screen
 
         # Event handling
+        #If the player tries to exit, then pygame quits
+        #the player's click is an event. if the event is on the button, then we proceed to instructions 
+        # by calling that function
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -364,6 +413,7 @@ def welcome_screen():
 welcome_screen()
 
 # After the instructions, your main game loop starts here
+#RUNNING means the game is now running!!!
 running = True
 
 # BACKGROUND, AND ALL GAMEPLAY DETAILS
@@ -371,16 +421,16 @@ try:
     map_image = pygame.image.load('images/pachisi1.jpeg') if dice_roll_counter <  25 else pygame.image.load('images/antique_ludo.jpeg') if 25 <= dice_roll_counter < 35 else pygame.image.load('images/modern_ludo11.jpeg')
     map_image = pygame.transform.scale(map_image, (screen_width, screen_height - 100))
 except pygame.error:
-    print("Unable to load image. Please ensure 'antique_ludo.jpeg' is in the same directory.")
+    print("Unable to load image. Please ensure background images are in the same directory.")
     sys.exit()
 
 
 
-# GRID AND TOKENS
+# GRID AND TOKENS SIZE
 grid_size = 40
 token_radius = grid_size // 3
 
-# Load images of tokens 1
+# Load images of tokens 1 for Pachisi board (wooden)
 yellow_one_image = pygame.image.load('images/yellow_pawn.png')
 blue_one_image = pygame.image.load('images/blue_pawn.png')
 red_one_image = pygame.image.load('images/red_pawn.png')
@@ -393,7 +443,7 @@ red_one = pygame.transform.scale(red_one_image, (grid_size, grid_size))
 green_one= pygame.transform.scale(green_one_image, (grid_size, grid_size))
 pawn_one= pygame.transform.scale(pawn_one_image, (grid_size, grid_size))
 
-# Load images of tokens 2
+# Load images of tokens 2, for "patented" board
 yellow_token_image = pygame.image.load('images/yellow_sepoy.png')
 blue_token_image = pygame.image.load('images/blue_sepoy.png')
 red_token_image = pygame.image.load('images/red_sepoy.png')
@@ -404,17 +454,6 @@ blue_two = pygame.transform.scale(blue_token_image, (grid_size, grid_size))
 red_two = pygame.transform.scale(red_token_image, (grid_size, grid_size))
 green_two = pygame.transform.scale(green_token_image, (grid_size, grid_size))
 
-# Load image of the ship
-ship_image = pygame.image.load('images/ship.png')
-ship_image = pygame.transform.scale(ship_image, (300, 250))  # Scale the ship image
-
-# Load vintage map background for ship animation
-vintage_map_image = pygame.image.load('images/vintage_map.jpeg')
-vintage_map_image = pygame.transform.scale(vintage_map_image, (screen_width, screen_height))
-
-# Load patent image for animation
-patent_image = pygame.image.load('images/patent.jpeg')
-patent_image = pygame.transform.scale(patent_image, (screen_width, screen_height))
 
 # TOKEN PATHS AND STARTS AND END POSITIONS
 yellow_start_positions = [(10.5, 1.75), (10.5, 3.25), (12.2, 1.75), (12.2, 3.25)]
@@ -499,16 +538,15 @@ green_path = [
     (1,7), (2,7), (3,7), (4,7), (5,7), (6,7) #Home run!! Green
 ]
 
-
 green_end_position = (6,7)
 
-# Initialize tokens
+# Initialize tokens via start positions
 yellow_tokens = yellow_start_positions.copy()
 blue_tokens = blue_start_positions.copy()
 red_tokens = red_start_positions.copy()
 green_tokens = green_start_positions.copy()
 
-# Scores for each color
+# Scores for each color, stored in a dictionary for efficient lookup
 scores = {'yellow': 0, 'blue': 0, 'red': 0, 'green': 0}
 
 
@@ -524,14 +562,17 @@ button_rect = pygame.Rect((screen_width // 2 - button_width // 2, screen_height 
 wbutton_width, button_height = 200, 60
 wbutton_x = screen_width // 2 - button_width // 2
 
-# Turns
+# Turn order, an index keeps track of whose turn it is
 turn_order = ['yellow', 'blue', 'red', 'green']
 current_turn_index = 0
 
-# Roll dice
+# Roll dice, random integer from 1 to 6
 def roll_dice():
     return random.randint(1, 6)
 
+#DYNAMIC DEBUGGING
+#The dice can only roll even numbers, allowing for quicker gameplay!
+#To implement, uncomment this function below and comment out the function roll_dice() above
 # def roll_dice(): #FOR DEMOS, IF YOU WANT THE DICE TO ROLL FAST!
 #     # Choose only from the even numbers: 2, 4, 6
 #     return random.choice([2, 4, 6])
@@ -572,8 +613,10 @@ def animate_fade_in_out_scroll():
     pygame.display.flip()
     fade_animation_done = True
 
+
 # Animate patent image
 def animate_patent():
+    #Check if animation is done or not -- ensures animation only plays if not done
     global patent_animation_done
     if patent_animation_done:
         return
@@ -643,6 +686,7 @@ def animate_patent():
 
 # Animate ship movement
 def animate_ship():
+    # Ensures animation only begins if boolean is set to FALSE
     global ship_animation_done
     if ship_animation_done:
         return
@@ -715,12 +759,18 @@ def animate_ship():
     ship_animation_done = True
 
 # Draw highlighted token
+#Creates a slightly larger white circle around the token when the token is clicked
 def draw_highlighted_token(token_position, token_color):
     pygame.draw.circle(screen, WHITE, (token_position[0] * grid_size + grid_size // 2, token_position[1] * grid_size + grid_size // 2), token_radius + 5, 3)
     pygame.draw.circle(screen, token_color, (token_position[0] * grid_size + grid_size // 2, token_position[1] * grid_size + grid_size // 2), token_radius)
 
 
-# Function to display total scores
+# # Function to display total scores
+# Purpose: Shows the current scores for all players.
+# Key Logic:
+# Renders the scores for yellow, red, blue, and green on the screen.
+# Highlights the winning player when the game ends.
+
 def display_scores():
     screen.blit(scroll_image, (0, 0))
     # Find the winning color
@@ -737,12 +787,12 @@ def display_scores():
         screen.blit(score_surface, (screen_width // 2 - score_surface.get_width() // 2, y_offset))
         y_offset += 50
 
-    #  GitHub
-    github_text = "Check out alvs210's GitHub!"
+    #  GitHub credits!
+    github_text = "Check out alvs210's GitHub to learn more about Ludo"
     github_surface = small_font.render(github_text, True, BLACK)
     screen.blit(github_surface, (screen_width // 2 - github_surface.get_width() // 2, y_offset + 50))
 
-    #  Thanks for Playing
+    #  Thanks for Playing <3
     thanks_text = "Thanks for playing!"
     thanks_surface = small_font.render(thanks_text, True, BLACK)
     screen.blit(thanks_surface, (screen_width // 2 - thanks_surface.get_width() // 2, y_offset + 100))
@@ -752,7 +802,10 @@ def display_scores():
 
 
 
-# Draw board with tokens
+# # Draws the game board along with all tokens in their current positions.
+# Uses Pygame drawing functions to render board layout.
+# Iterates over token lists (yellow, red, green, blue) and draws them at their respective positions.
+
 def draw_board_with_tokens(dice_roll=None, win=False):
     # Board background
     map_image = pygame.image.load('images/pachisi1.jpeg') if dice_roll_counter < 25 else pygame.image.load('images/antique_ludo.jpeg') if 25 <= dice_roll_counter < 35 else pygame.image.load('images/modern_ludo11.jpeg')
@@ -849,7 +902,10 @@ def draw_board_with_tokens(dice_roll=None, win=False):
     pygame.display.flip()
 
 
-# Animate token movement using the appropriate image based on logic
+# # Animate token movement
+# Calculates intermediate positions between start and end points using delta values.
+# Renders each frame from start to end point to create smooth animation.
+
 def animate_token_movement(start_pos, end_pos, token_color, dice_roll_counter):
     # Load the appropriate image based on the RGB value passed in
     if token_color == YELLOW:
@@ -927,6 +983,13 @@ def animate_token_movement(start_pos, end_pos, token_color, dice_roll_counter):
         pygame.draw.circle(screen, token_draw_color, (end_pixel_pos[0], end_pixel_pos[1]), token_radius)
     pygame.display.flip()
 
+
+# # Moves the selected token along the defined path based on dice roll.
+# Calculates the new position based on the dice roll.
+# Checks if the new position is occupied by an opponent's token, and sends the opponent's token back to its start position.
+# Animates token movement with animate_token_movement().
+# Updates token’s position and checks if it has reached the end position to increase the score.
+
 def move_token(tokens, path, dice_roll, selected_token):
     if tokens[selected_token] in path:
         current_position_index = path.index(tokens[selected_token])
@@ -985,7 +1048,7 @@ def move_token(tokens, path, dice_roll, selected_token):
             print(f"Moved token to {new_position}")
         
         elif new_position_index == len(path):
-            # If it is out of range, meaning the score exceeds the end position and reached end position
+            # Exact roll is needed in certain circumstances!
             if tokens == yellow_tokens:
                 scores['yellow'] += 1
                 new_position = yellow_end_position
@@ -1007,7 +1070,11 @@ def move_token(tokens, path, dice_roll, selected_token):
 
 
 
-# Move token from start
+# # Moves a token out of the starting position onto the board.
+# Checks if the selected token is in the start position.
+# Moves the token to the first position on the path.
+# Animates the token's movement
+
 def move_token_from_start(tokens, path, start_positions, dice_roll, selected_token):
     if tokens[selected_token] in start_positions:
         new_position = path[0]
@@ -1016,11 +1083,12 @@ def move_token_from_start(tokens, path, start_positions, dice_roll, selected_tok
             tokens[selected_token] = new_position
             print(f"Moved token from start to {new_position}")
 
-# Check win condition
+# Check win condition by checking if all the positions of the token color are in the end position
 def check_win_condition(tokens, end_position):
     return all(pos == end_position for pos in tokens)
 
-# Select token by click
+# # Calculates the distance between the mouse click and each token's position.
+# Returns the index of the selected token if the distance is within the token's radius
 def select_token_by_click(mouse_pos, tokens):
     for i, pos in enumerate(tokens):
         if pos:
@@ -1037,7 +1105,17 @@ win = False
 selected_token = None
 waiting_for_six_choice = False
 
+
+## MAIN GAME LOOP
+#  Controls the game's main event loop and processes player actions, game updates, and rendering.
+
 while running:
+    #  Uses pygame.event.get() to capture and respond to player input and window events 
+    # (e.g., quitting the game, mouse clicks).
+    # if event.type == pygame.QUIT --> handles quitting the game
+    #  elif event.type == pygame.MOUSEBUTTONDOWN and not win --> Handles player input for rolling the dice.
+    #  if dice_roll == 6 ---> Special case for 6 dice roll is dictated 
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -1064,12 +1142,16 @@ while running:
                     start_positions = red_start_positions
                     end_position = red_end_position
                 elif current_turn == 'green':
-
                     tokens = green_tokens
                     path = green_path
                     start_positions = green_start_positions
                     end_position = green_end_position
-
+        
+        #  selected_token = select_token_by_click() ---> Handles token selection and movement after a dice roll
+        ####selected_token = select_token_by_click(event.pos, tokens) --> called until player selects token
+        # if check_win_condition() --> Calls check_win_condition() to determine if the selected player has met the winning condition.
+        ### Sets win = True if the player has won
+        # waiting_for_six_choice gives the choice of either moving token out of start position
                 if dice_roll == 6:
                     waiting_for_six_choice = True
                 else:
@@ -1077,23 +1159,23 @@ while running:
             else:
                 if dice_roll is not None:  # If a dice roll has occurred
                     selected_token = select_token_by_click(event.pos, tokens)  # Allow the player to select a token to move
-                    if selected_token is not None:
-                        if waiting_for_six_choice:
-                            if tokens[selected_token] in start_positions:
+                    if selected_token is not None:  #if token has been selected
+                        if waiting_for_six_choice:  #if 6 is rolled
+                            if tokens[selected_token] in start_positions:  #if there are tokens in start
                                 move_token_from_start(tokens, path, start_positions, dice_roll, selected_token)
-                            else:
+                            else:  #if there are no tokens in start
                                 move_token(tokens, path, dice_roll, selected_token)
-                                #def move_token(tokens, path, dice_roll, selected_token):
-                            waiting_for_six_choice = False
-                        else:
-                            move_token(tokens, path, dice_roll, selected_token)
+                            
+                            waiting_for_six_choice = False  #not waiitng on choice based on six anymore
+                        else: #if no six was rolled
+                            move_token(tokens, path, dice_roll, selected_token)  #only move tokens, not from start
 
-                        if check_win_condition(tokens, end_position):
-                            win = True
-                        else:
+                        if check_win_condition(tokens, end_position):  #check if anyone won
+                            win = True   #if someone won!!!
+                        else:   #if nobody won, then we go to next turn
                             current_turn_index = (current_turn_index + 1) % len(turn_order)
 
-                    dice_roll = None
+                    dice_roll = None   #reset dice roll so it can be re-rolled
 
     # Change button color on hover
     if button_rect.collidepoint(pygame.mouse.get_pos()):
