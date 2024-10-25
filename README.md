@@ -1,4 +1,4 @@
-# **Ludo: From Empires to Epidemics**
+# **Ludo Digital Board Game: From Empires to Epidemics**
 
 ## **Description**
 
