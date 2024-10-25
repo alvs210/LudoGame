@@ -4,6 +4,8 @@
 
 This project recreates Ludo, a traditional South Asian game I grew up playing in Pakistan, in a digital format using Python and Pygame. It’s part of my broader "Window into Pakistan" project—an interactive platform for exploring Pakistani culture and politics. The game traces Ludo’s evolution from its origins as "Pachisi" in the Mughal Empire, through its rebranding under British colonialism, to its modern digital form. By blending gameplay with interactive storytelling, this project shows how a simple game can transcend time and cultures, using technology to reclaim and share cultural legacies
 
+MAKE SURE YOU CLICK THE TOKEN TO PROGRESS TO THE NEXT MOVE
+
 **NARRATIVE PLAYTHROUGH DEMO:**: [CLICK HERE](https://youtu.be/fmBuBdRFhOk)
 
 **OPPONENT INTERACTION AND EARNING POINTS DEMO** [CLICK HERE](https://youtu.be/cfyxOwjXlVw)
